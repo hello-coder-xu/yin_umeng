@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
 import 'package:yin_umeng/yin_umeng.dart';
 
 void main() => runApp(MyApp());
@@ -33,7 +30,8 @@ class _MyAppState extends State<MyApp> {
                 child: Text('init'),
                 onPressed: () {
                   //初始化友盟
-                  YinUmeng.init('5d246xxxxxxxxxxx001d5', policy: Policy.BATCH, encrypt: true, reportCrash: true);
+                  YinUmeng.init('5d246xxxxxxxxxxx001d5',
+                      channel: 'google play', policy: Policy.BATCH, encrypt: true, reportCrash: true);
                 },
               ),
               RaisedButton(

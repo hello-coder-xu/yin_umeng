@@ -53,7 +53,11 @@ public class YinUmengPlugin implements MethodCallHandler {
 
     public void init(MethodCall call, Result result) {
         UMConfigure.setLogEnabled(true);
-        UMConfigure.init(activity, (String) call.argument("key"), "Umeng",
+        String channel = "Umeng";
+        if (call.hasArgument("channel")) {
+            channel = call.argument("channel");
+        }
+        UMConfigure.init(activity, (String) call.argument("key"), channel,
                 UMConfigure.DEVICE_TYPE_PHONE, null);
         MobclickAgent.setPageCollectionMode(MobclickAgent.PageMode.MANUAL);
         result.success(true);

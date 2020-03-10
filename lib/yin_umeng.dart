@@ -12,9 +12,11 @@ class Policy {
 class YinUmeng {
   static const MethodChannel _channel = const MethodChannel('yin_umeng');
 
-  static Future<bool> init(String key, {int policy, bool reportCrash, bool encrypt, double interval, bool logEnable}) {
+  static Future<bool> init(String key,
+      {String channel, int policy, bool reportCrash, bool encrypt, double interval, bool logEnable}) {
     Map<String, dynamic> args = {"key": key};
 
+    if (channel != null) args["channel"] = channel;
     if (policy != null) args["policy"] = policy;
     if (reportCrash != null) args["reportCrash"] = reportCrash;
     if (encrypt != null) args["encrypt"] = encrypt;
