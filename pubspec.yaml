@@ -1,11 +1,11 @@
 name: yin_umeng
 description: flutter umeng analysis
-version: 0.0.2
-author: yin <yin_8023@163.com>
+version: 0.0.4
 homepage: https://github.com/yx544806988/yin_umeng.git
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
+  flutter: ">=1.12.0 <2.0.0"
 
 dependencies:
   flutter:
@@ -19,6 +19,8 @@ dev_dependencies:
 flutter:
 
   plugin:
-    androidPackage: com.yin_umeng
-    pluginClass: YinUmengPlugin
+    platforms:
+      android:
+        package: com.yin_umeng
+        pluginClass: YinUmengPlugin
 

@@ -22,8 +22,7 @@ public class YinUmengPlugin implements MethodCallHandler {
      * Plugin registration.
      */
     public static void registerWith(Registrar registrar) {
-        final MethodChannel channel =
-                new MethodChannel(registrar.messenger(), "yin_umeng");
+        final MethodChannel channel = new MethodChannel(registrar.messenger(), "yin_umeng");
         channel.setMethodCallHandler(new YinUmengPlugin(registrar.activity()));
     }
 
